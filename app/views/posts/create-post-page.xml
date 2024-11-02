@@ -1,0 +1,41 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Create Post" class="action-bar">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+        <ActionItem ios.position="right" 
+                   android.position="actionBar"
+                   text="Send"
+                   tap="{{ onSendPost }}" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <TextView hint="What's on your mind?" 
+                     text="{{ postText }}"
+                     height="200"
+                     class="input-field" />
+
+            <GridLayout columns="*, *" class="mt-4">
+                <Button text="Add Media" 
+                        tap="{{ onAddMedia }}"
+                        class="btn-primary m-1" 
+                        col="0" />
+                <Button text="Schedule" 
+                        tap="{{ onSchedule }}"
+                        class="btn-primary m-1" 
+                        col="1" />
+            </GridLayout>
+
+            <StackLayout class="mt-4" visibility="{{ hasMedia ? 'visible' : 'collapsed' }}">
+                <Label text="Media Preview" class="font-bold mb-2" />
+                <Image src="{{ mediaPath }}" 
+                       stretch="aspectFit"
+                       height="200" />
+            </StackLayout>
+
+            <StackLayout class="mt-4" visibility="{{ isScheduled ? 'visible' : 'collapsed' }}">
+                <Label text="Scheduled for:" class="font-bold" />
+                <Label text="{{ scheduledTime }}" class="text-gray-600" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

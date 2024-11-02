@@ -1,0 +1,22 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Login" class="action-bar" />
+    
+    <StackLayout class="p-4">
+        <Label text="Welcome to Telegram Post Manager" class="text-2xl font-bold text-center mb-4" />
+        
+        <StackLayout class="card">
+            <TextField hint="Phone Number" 
+                      text="{{ phoneNumber }}"
+                      keyboardType="phone"
+                      class="input-field" />
+            
+            <Button text="Login" 
+                    tap="{{ onLoginTap }}"
+                    class="btn-primary mt-4" />
+        </StackLayout>
+        
+        <ActivityIndicator busy="{{ isLoading }}" 
+                         visibility="{{ isLoading ? 'visible' : 'collapsed' }}"
+                         class="mt-4" />
+    </StackLayout>
+</Page>

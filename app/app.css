@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.action-bar {
+  background-color: #0088cc;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #0088cc;
+  color: white;
+  font-size: 16;
+  font-weight: bold;
+  border-radius: 5;
+  padding: 12;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  font-size: 16;
+  font-weight: bold;
+  border-radius: 5;
+  padding: 12;
+}
+
+.input-field {
+  padding: 10;
+  border-width: 1;
+  border-color: #e0e0e0;
+  border-radius: 4;
+  margin: 5 0;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8;
+  margin: 8;
+  padding: 16;
+  elevation: 2;
+}

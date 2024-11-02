@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Posts" class="action-bar">
+        <ActionItem ios.position="right" 
+                   android.position="actionBar" 
+                   text="New Post" 
+                   tap="{{ onNewPost }}" />
+        <ActionItem ios.position="right" 
+                   android.position="actionBar" 
+                   text="Settings"
+                   tap="{{ onSettingsTap }}" />
+    </ActionBar>
+    
+    <GridLayout rows="*, auto">
+        <ListView items="{{ posts }}" row="0" class="list-group">
+            <ListView.itemTemplate>
+                <StackLayout class="card">
+                    <Label text="{{ text }}" textWrap="true" class="text-base" />
+                    <GridLayout columns="auto, *, auto" class="mt-2">
+                        <Label text="{{ status }}" col="0" class="text-sm text-gray-500" />
+                        <Label text="{{ scheduledTime }}" col="2" class="text-sm text-gray-500" />
+                    </GridLayout>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+        <ActivityIndicator busy="{{ isLoading }}" 
+                         visibility="{{ isLoading ? 'visible' : 'collapsed' }}"
+                         row="0" />
+    </GridLayout>
+</Page>
